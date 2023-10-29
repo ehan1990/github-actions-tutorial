@@ -6,7 +6,8 @@ jobs:
     steps:
       - name: my-step
         run: echo "Hello World!"
-      - name: ls
-        run: ls
-      - name: pwd
-        run: pwd
+      - name: run
+        run: make run
+      - name: test
+        run: make test
+
