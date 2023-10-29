@@ -1,7 +1,7 @@
 name: My First Manual Workflow
 on: [workflow_dispatch]
 jobs:
-  my-job:
+  setup:
     runs-on: ubuntu-latest
     steps:
       - name: clone
@@ -17,11 +17,16 @@ jobs:
       - name: test
         run: make test
 
-  next-job:
-    needs: my-job
+  deploy-us-west-2:
+    needs: setup
     runs-on: ubuntu-latest
     steps:
-      - name: ls
-        run: ls
-      - name: pwd
-        run: pwd
+      - name: deploy
+        run: echo "deploying us-west-2"
+
+  deploy-us-east-1:
+    needs: setup
+    runs-on: ubuntu-latest
+    steps:
+      - name: deploy
+        run: echo "deploying us-east-1"
