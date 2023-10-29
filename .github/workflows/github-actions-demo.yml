@@ -4,8 +4,8 @@ jobs:
   my-job:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-        - name: clone
+      - name: clone
+        uses: actions/checkout@v3
           run: "hello world"
       - name: Set up Python
         uses: actions/setup-python@v4
