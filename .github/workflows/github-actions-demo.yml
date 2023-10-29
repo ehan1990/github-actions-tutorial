@@ -6,7 +6,6 @@ jobs:
     steps:
       - name: clone
         uses: actions/checkout@v3
-        run: "hello world"
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
